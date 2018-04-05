@@ -17,9 +17,10 @@ $(function() {
    * is clicked and pass it into the click function above...
    * The function should call one of the functions below, and pass the other in as the callback...
    */
-  $(":button").click(function() {
-    $("#results-area").text("Oh hi!");
-  });
+  //$(":button").click(function() {
+  //  $("#results-area").text("Oh hi!");
+  //});
+  $(":button").click(displayQuestionAndAnswer(fetchRandomTriviaQuestion));
 });
 
 function displayQuestionAndAnswer(question, answer) {
