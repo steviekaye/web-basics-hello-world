@@ -8,13 +8,18 @@ $(function() {
   // console.log will log a message or object to the browser developer console
   console.log("page loaded...");
 
-  $("selector-goes-here").click(/* function for when the button is clicked goes here */);
+  $(
+    "selector-goes-here"
+  ).click(/* function for when the button is clicked goes here */);
   /*
    * TODO: You will need to use a css selector to get jQuery to find the button element in the page
    * Then you will need to make a new javascript function to do stuff for when the button
    * is clicked and pass it into the click function above...
    * The function should call one of the functions below, and pass the other in as the callback...
    */
+  $(":button").click(function() {
+    $("#results-area").text("Oh hi!");
+  });
 });
 
 function displayQuestionAndAnswer(question, answer) {
@@ -30,7 +35,9 @@ function fetchRandomTriviaQuestion(callback) {
   // true or false trivia on animals encoded in base64
 
   // Configure your own api call at https://opentdb.com/api_config.php
-  var promise = $.get("https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64");
+  var promise = $.get(
+    "https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64"
+  );
 
   // $.get is asynchronous, so we need to define a
   // handler for when the request is complete
@@ -48,5 +55,5 @@ function fetchRandomTriviaQuestion(callback) {
 
     // call the function we passed into fetchRandomTriviaQuestion
     callback(question, answer);
-  })
+  });
 }
