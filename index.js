@@ -20,8 +20,13 @@ $(function() {
   //$(":button").click(function() {
   //  $("#results-area").text("Oh hi!");
   //});
-  $(":button").click(displayQuestionAndAnswer(fetchRandomTriviaQuestion));
+  $(":button").click(showAnimalTrivia);
 });
+
+function showAnimalTrivia() {
+  $("#results-area").text("Loading...");
+  fetchRandomTriviaQuestion(displayQuestionAndAnswer);
+}
 
 function displayQuestionAndAnswer(question, answer) {
   $("#results-area").text("True or false?");
